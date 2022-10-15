@@ -1,0 +1,53 @@
+.btn {
+    display: inline-flex;
+    position: relative;
+    width: 90px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+
+    background-color: red;
+    border-radius: 3px;
+    margin-top: 50px;
+
+    overflow: hidden;
+    transition: background-color 250ms linear;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: orange;
+}
+.btn::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: pink;
+    margin-right: 5px;
+
+    transition: transform 250ms;
+}
+
+.btn:hover::before {
+transform: translateY(-20px);
+}
+
+.btn::after{
+content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+
+    position: absolute;
+    top: 50%;
+    left: 13.7px;
+    transform: translateY(calc(50% + 10px));
+    transition: transform 250ms;
+}
+
+.btn:hover::after {
+    transform: translateY(-50%);
+}
+
